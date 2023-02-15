@@ -1,4 +1,2 @@
 # analog-electronic
-Repo contains projects that were constructed in the course Analog Electronics.
-QUCS-S with Ngspice was used for simulating the circuits.
-Picoscope was used to provide the AC supply and take necessary measurements.
+This repo contains Analog Electronics course projects simulated using QUCS-S with Ngspice, and measured with Picoscope.
