@@ -1,2 +1,2 @@
 # analog-electronic
-This repo contains Analog Electronics course projects simulated using QUCS-S with Ngspice, and measured with Picoscope.
+This GitHub repository features a collection of projects completed for an Analog Electronics course, with each project simulated using QUCS-S with Ngspice and measured with Picoscope. The repository includes circuit diagrams and photos of the working circuit for each project. Whether you're a student interested in analog electronics or an electronics hobbyist looking to improve your skills, this repository provides valuable insights into the practical application of electronics theory.
