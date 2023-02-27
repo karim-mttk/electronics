@@ -1,0 +1,100 @@
+* Qucs 0.0.20 /home/saul/projects/QUCS/QUCS_ANALOG_ELEKTRONIK/IE1202_HEMLAB_prj/F7_LAB1_QUCS_S.sch
+.INCLUDE "/usr/local/share/qucs-s/xspice_cmlib/include/ngspice_mathfunc.inc"
+* Qucs 0.0.20  /home/saul/projects/QUCS/QUCS_ANALOG_ELEKTRONIK/IE1202_HEMLAB_prj/F7_LAB1_QUCS_S.sch
+
+* TL074 OPERATIONAL AMPLIFIER "MACROMODEL" SUBCIRCUIT
+* CREATED USING PARTS RELEASE 4.01 ON 06/16/89 AT 13:08
+* (REV N/A)      SUPPLY VOLTAGE: +/-15V
+* CONNECTIONS:   NON-INVERTING INPUT
+*                | INVERTING INPUT
+*                | | POSITIVE POWER SUPPLY
+*                | | | NEGATIVE POWER SUPPLY
+*                | | | | OUTPUT
+*                | | | | |
+.SUBCKT TL074    1 2 3 4 5
+*
+  C1   11 12 3.498E-12
+  C2    6  7 15.00E-12
+  DC    5 53 DX
+  DE   54  5 DX
+  DLP  90 91 DX
+  DLN  92 90 DX
+  DP    4  3 DX
+  EGND 99  0 POLY(2) (3,0) (4,0) 0 .5 .5
+  FB    7 99 POLY(5) VB VC VE VLP VLN 0 4.715E6 -5E6 5E6 5E6 -5E6
+  GA    6  0 11 12 282.8E-6
+  GCM   0  6 10 99 8.942E-9
+  ISS   3 10 DC 195.0E-6
+  HLIM 90  0 VLIM 1K
+  J1   11  2 10 JX
+  J2   12  1 10 JX
+  R2    6  9 100.0E3
+  RD1   4 11 3.536E3
+  RD2   4 12 3.536E3
+  RO1   8  5 150
+  RO2   7 99 150
+  RP    3  4 2.143E3
+  RSS  10 99 1.026E6
+  VB    9  0 DC 0
+  VC    3 53 DC 2.200
+  VE   54  4 DC 2.200
+  VLIM  7  8 DC 0
+  VLP  91  0 DC 25
+  VLN   0 92 DC 25
+.MODEL DX D(IS=800.0E-18)
+.MODEL JX PJF(IS=15.00E-12 BETA=270.1E-6 VTO=-1)
+.ENDS
+
+* Qucs 0.0.20  TL074_OPAMP.sch
+.SUBCKT TL074_OPAMP _net0 _net1 _net2 _net3 _net4 
+X1 _net0 _net1 _net2 _net3 _net4 TL074
+.ENDS
+R3 _net0 _net1  100K
+R4 _net2 _net3  100K
+R5 _net4 _net5  100K
+R2 _net6 _net7  100K
+R11 _net0 _net8  10K
+R12 _net6 _net8  10K
+R13 _net9 _net3  100K
+C3 0 _net10  20P 
+C2 _net10 _net3  20P 
+R10 _net9 _net8  200K
+R1 _net1 _net7  3.3K
+R6 _net12 _net6  10K
+R7 _net12 0  10K
+R9 Vout1 _net13  10K
+V2 0 VEE DC 5
+C4 _net14 Vout1  47U 
+R18 _net15 _net14  2K
+R16 Vout2 _net15  20K
+R17 _net15 VEE  66K
+C5 Vout2 _net15  47N 
+C1 _net5 _net16  20P 
+VPr1 _net17 _net16 DC 0
+V1 VCC 0 DC 5
+R8 _net13 _net0  10K
+V3 _net17 _net10 DC 0 SIN(0 0 50 0 0) AC 0
+V4 _net5 _net3 DC 0 SIN(0 0 50 0 0) AC 0
+XTL074_OPAMP2 _net4 _net7 VCC VEE _net6 TL074_OPAMP
+XTL074_OPAMP3 _net12 _net13 VCC VEE Vout1 TL074_OPAMP
+XTL074_OPAMP1 _net2 _net1 VCC VEE _net0 TL074_OPAMP
+XTL074_OPAMP4 0 _net15 VCC VEE Vout2 TL074_OPAMP
+XTL074_OPAMP5 0 _net8 VCC VEE _net9 TL074_OPAMP
+.control
+echo "" > spice4qucs.cir.noise
+echo "" > spice4qucs.cir.pz
+let Vheart=0
+let VAC=220
+write F7_LAB1_QUCS_S_ac.txt v(VCC) v(VEE) VPr1#branch v(Vout1) v(Vout2) 
+destroy all
+reset
+
+let Vheart=0
+let VAC=220
+write F7_LAB1_QUCS_S_tran.txt v(VCC) v(VEE) VPr1#branch v(Vout1) v(Vout2) 
+destroy all
+reset
+
+exit
+.endc
+.END
