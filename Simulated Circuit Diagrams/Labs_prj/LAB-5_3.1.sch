@@ -1,9 +1,9 @@
 <Qucs Schematic 1.0.0>
 <Properties>
-  <View=16,1,2056,1458,0.764508,0,180>
+  <View=16,-83,2056,1438,0.764508,0,0>
   <Grid=10,10,0>
-  <DataSet=LAB-5_3.1.dat>
-  <DataDisplay=LAB-5_3.1.dpl>
+  <DataSet=LAB-5_3.dat>
+  <DataDisplay=LAB-5_3.dpl>
   <OpenDisplay=0>
   <Script=LAB-5_3.1.m>
   <RunScript=0>
@@ -66,16 +66,16 @@
 <Diagrams>
   <Rect 1320 341 469 311 3 #c0c0c0 1 10 1 1 1 1e+07 1 -1 1 1 1 -1 1 1 315 0 225 0 0 0 "" "" "">
 	<"ngspice/ac.v(e)" #ff0000 0 3 0 0 0>
-	  <Mkr 533.67/0/0 194 -165 3 0 0>
+	  <Mkr 533.67 194 -165 3 0 0>
   </Rect>
   <Rect 1480 849 503 408 3 #c0c0c0 1 00 1 0 0.0002 0.001 1 0 2 10 1 -1 0.5 1 315 0 225 0 0 0 "" "" "">
 	<"ngspice/tran.v(e)" #ff0000 0 3 0 0 0>
   </Rect>
   <Rect 510 1418 737 608 3 #c0c0c0 1 00 1 0 0.0001 0.001 1 -0.0270952 0.02 0.18 1 -1 0.2 1 315 0 225 0 0 0 "" "" "">
 	<"ngspice/tran.v(c)" #0000ff 0 3 0 0 0>
-	  <Mkr 0.000198708/0/0 206 -605 3 0 0>
+	  <Mkr 0.000198708 206 -605 3 0 0>
 	<"ngspice/tran.v(vin)" #ff0000 0 3 0 0 0>
-	  <Mkr 0.000199908/0/0 238 -179 3 0 0>
+	  <Mkr 0.000199908 238 -179 3 0 0>
   </Rect>
 </Diagrams>
 <Paintings>
