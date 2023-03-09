@@ -1,0 +1,29 @@
+<Qucs Schematic 0.0.21>
+<Properties>
+  <View=0,0,1057,800,1,0,0>
+  <Grid=10,10,0>
+  <DataSet=Mål3_2.dat>
+  <DataDisplay=Mål3_2.sch>
+  <OpenDisplay=1>
+  <Script=Mål3_2.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 340 649 677 429 3 #c0c0c0 1 10 1 0 2e+07 1e+08 1 -67.56 20 5.59636 1 -1 1 1 315 0 225 "" "" "">
+	<"ngspice/ac.vout_db" #0000ff 0 3 0 0 0>
+	  <Mkr 155052 437 -322 3 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>
