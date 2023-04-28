@@ -1,2 +1,2 @@
-# analog-electronic
+# Electronics Readme:
 This GitHub repository showcases an array of projects completed for the Analog Electronics and Electronics Product Development course. Primarily utilizing QUCS-S or KiCad for simulations, the repository contains circuit diagrams and photographs of functional circuits for each project. Catering to both students with a keen interest in analog electronics and hobbyists seeking to enhance their skills, this repository offers valuable insights into the practical implementation of electronics theory.
